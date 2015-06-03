@@ -1,5 +1,5 @@
 {
-  "app": {
+  "app": {    
     "package": "app_name",
     "description": {
       "value": "Play the famous zen tunes in your help desk.",
@@ -8,7 +8,10 @@
     "name": {
       "value": "Buddha Machine",
       "title": "app name"
-    }
+    },
+    "parameters": {
+      "token"     : { "label": "ActivityStream API Token" },
+    }    
   },
 
   "loading": {
