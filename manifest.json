@@ -1,16 +1,14 @@
 {
-  "name": "ActivitySpike",
+  "name": "Activity Stream",
   "author": {
-    "name": "ActivityStream",
+    "name": "Activity Stream",
     "email": "info@activitystream.com",
     "url": "http://activitystream.com"
   },
   "defaultLocale": "en",
   "private": true,
-  "location": "ticket_sidebar",
   "version": "1.1",
-  "frameworkVersion": "1.0",
-
+  "requirementsOnly": true,
   "parameters": [{
       "name": "token",
       "type": "text",
