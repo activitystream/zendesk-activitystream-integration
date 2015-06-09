@@ -1,7 +1,7 @@
 {
-  "name": "zanspike",
+  "name": "json_gen",
   "version": "1.0.0",
-  "description": "[brief description of the app]",
+  "description": "Helper app to generate json like strings we can use to post to our service",
   "main": "json_gen.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
