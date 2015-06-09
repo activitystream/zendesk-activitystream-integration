@@ -13,6 +13,9 @@ var json = {
     "assignee_email": "{{ticket.assignee.email}}",
     "submitter_email": "{{ticket.submitter.email}}",
     "current_user": "{{current_user.email}}",
+    "custom_fields": "{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}",
+    "ticket_custom_fields": "{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}",
+    "requester_custom_fields": "{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}",
     "tags": null
 };
 
