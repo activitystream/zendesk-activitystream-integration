@@ -20,8 +20,17 @@
     "triggers": {
         "notify_as_on_ticket_status_changed": {
             "title": "Notify Activity Stream on ticket status Changed",
-            "all": [{
+            "any": [{
                 "field": "status",
+                "operator": "changed"
+            }, {
+                "field": "priority",
+                "operator": "changed"
+            }, {
+                "field": "satisfaction_score",
+                "operator": "changed"
+            }, {
+                "field": "satisfaction_score",
                 "operator": "changed"
             }],
             "actions": [{

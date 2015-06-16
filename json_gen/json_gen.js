@@ -1,3 +1,4 @@
+/// <reference path="../typings/node/node.d.ts"/>
 var _ = require('underscore');
 
 var json = {
@@ -16,6 +17,7 @@ var json = {
     "custom_fields": "{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}",
     "ticket_custom_fields": "{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}",
     "requester_custom_fields": "{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}",
+    "comments": "{{ticket.comments_formatted}}",
     "tags": null
 };
 
@@ -43,7 +45,7 @@ var ticketPlaceholders = {
 // $.getScript("http://underscorejs.org/underscore-min.js")
 // var prefix = 'ticket.';
 // JSON.stringify(_.chain(items).filter(function(entry) {return (entry.innerText.match(/^ticket\./));}).map(function (item) {return item.innerText;}).reduce(function(memo, item) {memo[item.toString().slice(prefix.length)] = item.toString(); return memo;}, {}).value())
-var jsonifier = function(sample) {
+var jsonifier = function(sample, change) {
     var fields = [];
     for (var fieldName in sample) {
     	if (fieldName.indexOf('<') !== -1) continue;
@@ -53,7 +55,17 @@ var jsonifier = function(sample) {
         }
         fields.push("\\\"" + fieldName + "\\\" : \\\"" + value +"\\\"");
     }
+    fields.push("\\\"_as_event\\\" : \\\"" + change +"\\\"")
     return '{' + fields.join(',') + '}';
 }
+var text = '';
+process.stdin.setEncoding('utf-8');
+process.stdin.on('data', function (chunk) {
+    text += chunk;
+});
 
-console.log(jsonifier(_.extend(json, ticketPlaceholders)));
+process.stdin.on('end', function () {
+    var all = function (change) {return jsonifier(_.extend(json, ticketPlaceholders), change)};
+    console.log(_.template(text)({all : all}));
+
+});
