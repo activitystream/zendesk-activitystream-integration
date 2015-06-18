@@ -14,5 +14,11 @@
       "type": "text",
       "required" : true,
       "secure": true
+    }, {
+      "name": "host",
+      "type": "text",
+      "required" : true,
+      "secure": false,
+      "default": "https://inbound.activitystream.com"
     }]  
 }
