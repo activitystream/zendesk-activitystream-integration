@@ -140,6 +140,26 @@
                 }
             ]
         },
+        "notify_as_on_ticket_promoted_1": {
+            "title": "Notify Activity Stream on ticket promoted - part 1",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": 0
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"comments\" : \"{{ticket.comments_formatted}}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"_as_event\" : \"ticket.promoted\"}"
+                    ]
+                }
+            ]
+        },
         "notify_as_on_ticket_promoted_2": {
             "title": "Notify Activity Stream on ticket promoted - part 2",
             "all": [
@@ -211,6 +231,26 @@
                     "value": [
                         "activitystream",
                         "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"comments\" : \"{{ticket.comments_formatted}}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"_as_event\" : \"ticket.promoted\"}"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_demoted_1": {
+            "title": "Notify Activity Stream on ticket demoted - part 1",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": 0
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"comments\" : \"{{ticket.comments_formatted}}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"_as_event\" : \"ticket.demoted\"}"
                     ]
                 }
             ]
