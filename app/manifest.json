@@ -7,18 +7,12 @@
   },
   "defaultLocale": "en",
   "private": true,
-  "version": "1.1",
+  "version": "1.2",
   "requirementsOnly": true,
   "parameters": [{
       "name": "token",
       "type": "text",
       "required" : true,
       "secure": true
-    }, {
-      "name": "host",
-      "type": "text",
-      "required" : true,
-      "secure": false,
-      "default": "https://inbound.activitystream.com"
     }]  
 }
