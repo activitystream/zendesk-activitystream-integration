@@ -27,18 +27,21 @@ var ticketPlaceholders = {
     "created_at_with_timestamp": "ticket.created_at_with_timestamp",
     "due_date_with_timestamp": "ticket.due_date_with_timestamp",
     "external_id": "ticket.external_id",
-    "group.name": "ticket.group.name",
-    "id": "ticket.id",
-    "in_business_hours": "ticket.in_business_hours",
-    "organization.name": "ticket.organization.name",
-    "priority": "ticket.priority",
-    "score": "ticket.score",
-    "status": "ticket.status",
-    "ticket_type": "ticket.ticket_type",
-    "title": "ticket.title",
-    "updated_at_with_timestamp": "ticket.updated_at_with_timestamp",
-    "url_with_protocol": "ticket.url_with_protocol",
-    "via": "ticket.via"
+    "group.name": "",
+    "id": "",
+    "in_business_hours": "",
+    "organization.name": "",
+    "priority": "",
+    "score": "",
+    "status": "",
+    "ticket_type": "",
+    "ticket_type2": "{{ticket.type}}",
+    "title": "",
+    "updated_at_with_timestamp": "",
+    "url_with_protocol": "",
+    "via": "",
+    "satisfaction_score": "{{satisfaction.current_rating}}",
+    "satisfaction_comment": "{{satisfaction.current_comment}}"
 };
 
 // used this to scrape the zendesk info page

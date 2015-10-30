@@ -119,6 +119,53 @@
                 }
             ]
         },
+        "notify_as_on_ticket_pending": {
+            "title": "Notify Activity Stream on ticket pending",
+            "all": [
+                {
+                    "field": "status",
+                    "operator": "value",
+                    "value": "pending"
+                },
+                {
+                    "field": "status",
+                    "operator": "changed",
+                    "value": null
+                }
+                
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.pending') %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_type_changed": {
+            "title": "Notify Activity Stream on ticket type changed",
+            "all": [
+                {
+                    "field": "type",
+                    "operator": "changed",
+                    "value": null
+                }
+                
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.reclassified') %>"
+                    ]
+                }
+            ]
+        },
         "notify_as_on_assignee_changed": {
             "title": "Notify Activity Stream on assignee changed",
             "all": [
