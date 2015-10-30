@@ -2,14 +2,14 @@
 var _ = require('underscore');
 
 var json = {
-    "id": 34,
-    "type": "subject",
-    "title": "Subject",
-    "description": "This is the subject field of a ticket",
-    "position": 21,
-    "active": true,
-    "required": true,
-    "title_in_portal": "Subject",
+    "id": null,
+    "type": null,
+    "title": null,
+    "description": null,
+    "position": null,
+    "active": null,
+    "required": null,
+    "title_in_portal": null,
     "requester_email": "{{ticket.requester.email}}",
     "assignee_email": "{{ticket.assignee.email}}",
     "submitter_email": "{{ticket.submitter.email}}",
@@ -22,24 +22,23 @@ var json = {
 };
 
 var ticketPlaceholders = {
-    "account": "ticket.account",
+    "account": null,
     "ccs": "{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}",
-    "created_at_with_timestamp": "ticket.created_at_with_timestamp",
-    "due_date_with_timestamp": "ticket.due_date_with_timestamp",
-    "external_id": "ticket.external_id",
-    "group.name": "",
-    "id": "",
-    "in_business_hours": "",
-    "organization.name": "",
-    "priority": "",
-    "score": "",
-    "status": "",
-    "ticket_type": "",
-    "ticket_type2": "{{ticket.type}}",
-    "title": "",
-    "updated_at_with_timestamp": "",
-    "url_with_protocol": "",
-    "via": "",
+    "created_at_with_timestamp": null,
+    "due_date_with_timestamp": null,
+    "external_id": null,
+    "group.name": null,
+    "id": null,
+    "in_business_hours": null,
+    "organization.name": null,
+    "priority": null,
+    "score": null,
+    "status": null,
+    "ticket_type": null,
+    "title": null,
+    "updated_at_with_timestamp": null,
+    "url_with_protocol": null,
+    "via": null,
     "satisfaction_score": "{{satisfaction.current_rating}}",
     "satisfaction_comment": "{{satisfaction.current_comment}}"
 };
@@ -51,9 +50,8 @@ var ticketPlaceholders = {
 var jsonifier = function(sample, change) {
     var fields = [];
     for (var fieldName in sample) {
-    	if (fieldName.indexOf('<') !== -1) continue;
         var value = '{{ticket.'+fieldName + '}}';
-        if (sample[fieldName] && typeof(sample[fieldName]) === 'string' && (sample[fieldName].slice(0,2) === '{{' || sample[fieldName].slice(0,2) === '{%')) {
+        if (sample[fieldName] && typeof(sample[fieldName]) === 'string') {
             value = sample[fieldName];
         }
         fields.push("\\\"" + fieldName + "\\\" : \\\"" + value +"\\\"");
