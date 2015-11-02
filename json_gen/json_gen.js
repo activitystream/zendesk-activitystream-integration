@@ -31,24 +31,19 @@ var json = {
 
 "} {% unless forloop.last %} , {% endunless %}"+ 
 "{% endfor %} ]" ,
-    "tags": null
-};
-
-var ticketPlaceholders = {
+    "tags": null,
     "account": null,
     "ccs": "{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}",
     "created_at_with_timestamp": null,
     "due_date_with_timestamp": null,
     "external_id": null,
     "group.name": null,
-    "id": null,
     "in_business_hours": null,
     "organization.name": null,
     "priority": null,
     "score": null,
     "status": null,
     "ticket_type": null,
-    "title": null,
     "updated_at_with_timestamp": null,
     "url_with_protocol": null,
     "via": null,
@@ -82,7 +77,7 @@ process.stdin.on('data', function (chunk) {
 });
 
 process.stdin.on('end', function () {
-    var all = function (change) {return jsonifier(_.extend(json, ticketPlaceholders), change)};
+    var all = function (change) {return jsonifier(json, change)};
     console.log(_.template(text)({all : all}));
 
 });
