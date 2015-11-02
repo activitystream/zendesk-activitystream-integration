@@ -48,13 +48,10 @@ var json = {
     "url_with_protocol": null,
     "via": null,
     "satisfaction_score": "{{satisfaction.current_rating}}",
-    "satisfaction_comment": "{{satisfaction.current_comment}}"
+    "satisfaction_comment": "{{satisfaction.current_comment}}",
+    "_v" : "1.2.2"
 };
 
-// used this to scrape the zendesk info page
-// $.getScript("http://underscorejs.org/underscore-min.js")
-// var prefix = 'ticket.';
-// JSON.stringify(_.chain(items).filter(function(entry) {return (entry.innerText.match(/^ticket\./));}).map(function (item) {return item.innerText;}).reduce(function(memo, item) {memo[item.toString().slice(prefix.length)] = item.toString(); return memo;}, {}).value())
 var jsonifier = function(sample, change) {
     var fields = [];
     for (var fieldName in sample) {
