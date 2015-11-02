@@ -17,7 +17,20 @@ var json = {
     "custom_fields": "{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}",
     "ticket_custom_fields": "{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}",
     "requester_custom_fields": "{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}",
-    "comments": "{{ticket.comments_formatted}}",
+    "comments": "[ {% for comment in ticket.comments %} {"+
+   "\\\"created_at\\\" : \\\"{{comment.created_at}}\\\","+
+   "\\\"created_at_with_time\\\" : \\\"{{comment.created_at_with_time}}\\\","+
+   "\\\"name\\\" : \\\"{{comment.author.name}}\\\","+
+   "\\\"value\\\" : \\\"{{comment.value}}\\\","+
+
+   "\\\"attachments\\\" : [ {% for attachment in comment.attachments %}"+
+   "{ \\\"filename\\\" : \\\"{{attachment.filename}}\\\","+
+   " \\\"url\\\" : \\\"{{attachment.url}}\\\" \} "+
+
+   "{% unless forloop.last %} , {% endunless %} {% endfor %} ]"+
+
+"} {% unless forloop.last %} , {% endunless %}"+ 
+"{% endfor %} ]" ,
     "tags": null
 };
 
@@ -54,7 +67,10 @@ var jsonifier = function(sample, change) {
         if (sample[fieldName] && typeof(sample[fieldName]) === 'string') {
             value = sample[fieldName];
         }
-        fields.push("\\\"" + fieldName + "\\\" : \\\"" + value +"\\\"");
+        if (value.charAt(0) === '[')
+            fields.push("\\\"" + fieldName + "\\\" : " + value);
+        else
+            fields.push("\\\"" + fieldName + "\\\" : \\\"" + value +"\\\"");
     }
     fields.push("\\\"_as_event\\\" : \\\"" + change +"\\\"")
     return '{' + fields.join(',') + '}';
