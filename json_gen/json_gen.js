@@ -49,7 +49,7 @@ var json = {
     "via": null,
     "satisfaction_score": "{{satisfaction.current_rating}}",
     "satisfaction_comment": "{{satisfaction.current_comment}}",
-    "_v" : "1.2.2"
+    "_v" : "1.2.3"
 };
 
 var jsonifier = function(sample, change) {
@@ -74,7 +74,13 @@ process.stdin.on('data', function (chunk) {
 });
 
 process.stdin.on('end', function () {
-    var all = function (change) {return jsonifier(json, change)};
-    console.log(_.template(text)({all : all}));
+    var allWithComments = function (change) {return jsonifier(json, change)};
+    var all = function (change, props) {
+        var all = JSON.parse(JSON.stringify(json));
+        delete all.comments;
+        if (props) all = _.assign(all, props);
+        return jsonifier(all, change)
+    };
+    console.log(_.template(text)({all : all, allWithComments : allWithComments}));
 
 });

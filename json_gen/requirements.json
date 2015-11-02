@@ -54,7 +54,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('comments.changed') %>"
+                        "<%= allWithComments('comments.changed') %>"
                     ]
                 }
             ]
@@ -145,13 +145,13 @@
                 }
             ]
         },
-        "notify_as_on_ticket_type_changed": {
-            "title": "Notify Activity Stream on ticket type changed",
+        "notify_as_on_ticket_type_changed_1": {
+            "title": "Notify Activity Stream on ticket type changed 1",
             "all": [
                 {
                     "field": "type",
-                    "operator": "changed",
-                    "value": null
+                    "operator": "value",
+                    "value": "question"
                 }
                 
             ],
@@ -161,7 +161,70 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.reclassified') %>"
+                        "<%= all('ticket.reclassified', {ticket_type : 'question'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_type_changed_2": {
+            "title": "Notify Activity Stream on ticket type changed 2",
+            "all": [
+                {
+                    "field": "type",
+                    "operator": "value",
+                    "value": "incident"
+                }
+                
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.reclassified', {ticket_type : 'incident'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_type_changed_3": {
+            "title": "Notify Activity Stream on ticket type changed 3",
+            "all": [
+                {
+                    "field": "type",
+                    "operator": "value",
+                    "value": "problem"
+                }
+                
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.reclassified', {ticket_type : 'problem'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_type_changed_4": {
+            "title": "Notify Activity Stream on ticket type changed 4",
+            "all": [
+                {
+                    "field": "type",
+                    "operator": "value",
+                    "value": "task"
+                }
+                
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.reclassified', {ticket_type : 'task'}) %>"
                     ]
                 }
             ]
@@ -288,7 +351,12 @@
                     "field": "priority",
                     "operator": "value",
                     "value": 0
-                }
+                },
+                {
+                    "field": "update_type",
+                    "operator": "is",
+                    "value": "Change"
+                }                
             ],
             "any": [],
             "actions": [
@@ -296,7 +364,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.demoted') %>"
+                        "<%= all('ticket.demoted1') %>"
                     ]
                 }
             ]
@@ -321,7 +389,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.demoted') %>"
+                        "<%= all('ticket.demoted2') %>"
                     ]
                 }
             ]
@@ -346,7 +414,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.demoted') %>"
+                        "<%= all('ticket.demoted3') %>"
                     ]
                 }
             ]
@@ -371,7 +439,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.demoted') %>"
+                        "<%= all('ticket.demoted4') %>"
                     ]
                 }
             ]
@@ -396,7 +464,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.demoted') %>"
+                        "<%= all('ticket.demoted5') %>"
                     ]
                 }
             ]
