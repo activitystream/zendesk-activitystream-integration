@@ -256,6 +256,11 @@
                     "field": "priority",
                     "operator": "value_previous",
                     "value": 0
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "low"
                 }
             ],
             "any": [],
@@ -264,7 +269,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.promoted') %>"
+                        "<%= all('ticket.promoted', {priority : 'low'}) %>"
                     ]
                 }
             ]
@@ -275,12 +280,12 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "low"
+                    "value": 0
                 },
                 {
                     "field": "priority",
-                    "operator": "greater_than",
-                    "value": "low"
+                    "operator": "value",
+                    "value": "normal"
                 }
             ],
             "any": [],
@@ -289,7 +294,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.promoted') %>"
+                        "<%= all('ticket.promoted', {priority : 'normal'}) %>"
                     ]
                 }
             ]
@@ -300,12 +305,12 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "normal"
+                    "value": 0
                 },
                 {
                     "field": "priority",
-                    "operator": "greater_than",
-                    "value": "normal"
+                    "operator": "value",
+                    "value": "high"
                 }
             ],
             "any": [],
@@ -314,7 +319,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.promoted') %>"
+                        "<%= all('ticket.promoted', {priority : 'high'}) %>"
                     ]
                 }
             ]
@@ -325,11 +330,61 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "high"
+                    "value": 0
                 },
                 {
                     "field": "priority",
-                    "operator": "greater_than",
+                    "operator": "value",
+                    "value": "urgent"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.promoted', {priority : 'urgent'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_promoted_5": {
+            "title": "Notify Activity Stream on ticket promoted - part 5",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "low"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "normal"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.promoted', {priority : 'normal'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_promoted_6": {
+            "title": "Notify Activity Stream on ticket promoted - part 6",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "low"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
                     "value": "high"
                 }
             ],
@@ -339,7 +394,107 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.promoted') %>"
+                        "<%= all('ticket.promoted', {priority : 'high'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_promoted_7": {
+            "title": "Notify Activity Stream on ticket promoted - part 7",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "low"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "urgent"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.promoted', {priority : 'urgent'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_promoted_8": {
+            "title": "Notify Activity Stream on ticket promoted - part 8",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "normal"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "high"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.promoted', {priority : 'high'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_promoted_9": {
+            "title": "Notify Activity Stream on ticket promoted - part 9",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "normal"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "urgent"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.promoted', {priority : 'urgent'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_promoted_10": {
+            "title": "Notify Activity Stream on ticket promoted - part 10",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "high"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "urgent"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.promoted', {priority : 'urgent'}) %>"
                     ]
                 }
             ]
@@ -364,7 +519,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.demoted1') %>"
+                        "<%= all('ticket.demoted',  {priority : 'none'}) %>"
                     ]
                 }
             ]
@@ -375,11 +530,11 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "low"
+                    "value": "normal"
                 },
                 {
                     "field": "priority",
-                    "operator": "less_than",
+                    "operator": "value",
                     "value": "low"
                 }
             ],
@@ -389,7 +544,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.demoted2') %>"
+                        "<%= all('ticket.demoted',  {priority : 'low'}) %>"
                     ]
                 }
             ]
@@ -400,12 +555,12 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "normal"
+                    "value": "high"
                 },
                 {
                     "field": "priority",
-                    "operator": "less_than",
-                    "value": "normal"
+                    "operator": "value",
+                    "value": "low"
                 }
             ],
             "any": [],
@@ -414,7 +569,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.demoted3') %>"
+                        "<%= all('ticket.demoted',  {priority : 'low'}) %>"
                     ]
                 }
             ]
@@ -425,12 +580,12 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "high"
+                    "value": "urgent"
                 },
                 {
                     "field": "priority",
-                    "operator": "less_than",
-                    "value": "high"
+                    "operator": "value",
+                    "value": "low"
                 }
             ],
             "any": [],
@@ -439,7 +594,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.demoted4') %>"
+                        "<%= all('ticket.demoted',  {priority : 'low'}) %>"
                     ]
                 }
             ]
@@ -450,12 +605,12 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "urgent"
+                    "value": "high"
                 },
                 {
                     "field": "priority",
-                    "operator": "less_than",
-                    "value": "urgent"
+                    "operator": "value",
+                    "value": "normal"
                 }
             ],
             "any": [],
@@ -464,7 +619,57 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.demoted5') %>"
+                        "<%= all('ticket.demoted',  {priority : 'normal'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_demoted_6": {
+            "title": "Notify Activity Stream on ticket demoted - part 5",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "urgent"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "normal"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.demoted',  {priority : 'normal'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_demoted_7": {
+            "title": "Notify Activity Stream on ticket demoted - part 7",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "urgent"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "high"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.demoted',  {priority : 'high'}) %>"
                     ]
                 }
             ]

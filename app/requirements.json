@@ -256,6 +256,11 @@
                     "field": "priority",
                     "operator": "value_previous",
                     "value": 0
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "low"
                 }
             ],
             "any": [],
@@ -264,7 +269,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"low\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
                     ]
                 }
             ]
@@ -275,12 +280,12 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "low"
+                    "value": 0
                 },
                 {
                     "field": "priority",
-                    "operator": "greater_than",
-                    "value": "low"
+                    "operator": "value",
+                    "value": "normal"
                 }
             ],
             "any": [],
@@ -289,7 +294,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"normal\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
                     ]
                 }
             ]
@@ -300,12 +305,12 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "normal"
+                    "value": 0
                 },
                 {
                     "field": "priority",
-                    "operator": "greater_than",
-                    "value": "normal"
+                    "operator": "value",
+                    "value": "high"
                 }
             ],
             "any": [],
@@ -314,7 +319,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"high\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
                     ]
                 }
             ]
@@ -325,11 +330,61 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "high"
+                    "value": 0
                 },
                 {
                     "field": "priority",
-                    "operator": "greater_than",
+                    "operator": "value",
+                    "value": "urgent"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"urgent\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_promoted_5": {
+            "title": "Notify Activity Stream on ticket promoted - part 5",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "low"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "normal"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"normal\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_promoted_6": {
+            "title": "Notify Activity Stream on ticket promoted - part 6",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "low"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
                     "value": "high"
                 }
             ],
@@ -339,7 +394,107 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"high\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_promoted_7": {
+            "title": "Notify Activity Stream on ticket promoted - part 7",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "low"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "urgent"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"urgent\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_promoted_8": {
+            "title": "Notify Activity Stream on ticket promoted - part 8",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "normal"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "high"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"high\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_promoted_9": {
+            "title": "Notify Activity Stream on ticket promoted - part 9",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "normal"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "urgent"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"urgent\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_promoted_10": {
+            "title": "Notify Activity Stream on ticket promoted - part 10",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "high"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "urgent"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"urgent\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.promoted\"}"
                     ]
                 }
             ]
@@ -364,7 +519,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.demoted1\"}"
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"none\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.demoted\"}"
                     ]
                 }
             ]
@@ -375,11 +530,11 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "low"
+                    "value": "normal"
                 },
                 {
                     "field": "priority",
-                    "operator": "less_than",
+                    "operator": "value",
                     "value": "low"
                 }
             ],
@@ -389,7 +544,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.demoted2\"}"
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"low\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.demoted\"}"
                     ]
                 }
             ]
@@ -400,12 +555,12 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "normal"
+                    "value": "high"
                 },
                 {
                     "field": "priority",
-                    "operator": "less_than",
-                    "value": "normal"
+                    "operator": "value",
+                    "value": "low"
                 }
             ],
             "any": [],
@@ -414,7 +569,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.demoted3\"}"
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"low\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.demoted\"}"
                     ]
                 }
             ]
@@ -425,12 +580,12 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "high"
+                    "value": "urgent"
                 },
                 {
                     "field": "priority",
-                    "operator": "less_than",
-                    "value": "high"
+                    "operator": "value",
+                    "value": "low"
                 }
             ],
             "any": [],
@@ -439,7 +594,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.demoted4\"}"
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"low\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.demoted\"}"
                     ]
                 }
             ]
@@ -450,12 +605,12 @@
                 {
                     "field": "priority",
                     "operator": "value_previous",
-                    "value": "urgent"
+                    "value": "high"
                 },
                 {
                     "field": "priority",
-                    "operator": "less_than",
-                    "value": "urgent"
+                    "operator": "value",
+                    "value": "normal"
                 }
             ],
             "any": [],
@@ -464,7 +619,57 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.demoted5\"}"
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"normal\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.demoted\"}"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_demoted_6": {
+            "title": "Notify Activity Stream on ticket demoted - part 5",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "urgent"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "normal"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"normal\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.demoted\"}"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_demoted_7": {
+            "title": "Notify Activity Stream on ticket demoted - part 7",
+            "all": [
+                {
+                    "field": "priority",
+                    "operator": "value_previous",
+                    "value": "urgent"
+                },
+                {
+                    "field": "priority",
+                    "operator": "value",
+                    "value": "high"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"description\" : \"{{ticket.description}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"high\",\"score\" : \"{{ticket.score}}\",\"status\" : \"{{ticket.status}}\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.3\",\"_as_event\" : \"ticket.demoted\"}"
                     ]
                 }
             ]
