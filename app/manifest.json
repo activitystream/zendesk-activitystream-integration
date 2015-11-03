@@ -7,7 +7,7 @@
   },
   "defaultLocale": "en",
   "private": true,
-  "version": "1.2.3",
+  "version": "1.2.4",
   "requirementsOnly": true,
   "parameters": [{
       "name": "token",

@@ -74,7 +74,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.created') %>"
+                        "<%= allWithComments('ticket.created') %>"
                     ]
                 }
             ]

@@ -49,7 +49,7 @@ var json = {
     "via": null,
     "satisfaction_score": "{{satisfaction.current_rating}}",
     "satisfaction_comment": "{{satisfaction.current_comment}}",
-    "_v" : "1.2.3"
+    "_v" : "1.2.4"
 };
 
 var jsonifier = function(sample, change) {
