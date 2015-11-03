@@ -74,7 +74,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= allWithComments('ticket.created') %>"
+                        "<%= allWithComments('ticket.created', {status : 'new'}) %>"
                     ]
                 }
             ]
@@ -94,7 +94,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.solved') %>"
+                        "<%= all('ticket.solved', {status : 'solved'}) %>"
                     ]
                 }
             ]
@@ -114,7 +114,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.closed') %>"
+                        "<%= all('ticket.closed', {status : 'closed'}) %>"
                     ]
                 }
             ]
@@ -126,21 +126,31 @@
                     "field": "status",
                     "operator": "value",
                     "value": "pending"
-                },
+                }                
+            ],
+            "any": [
                 {
                     "field": "status",
-                    "operator": "changed",
-                    "value": null
-                }
-                
+                    "operator": "value_previous",
+                    "value": "new"
+                },                                
+                {
+                    "field": "status",
+                    "operator": "value_previous",
+                    "value": "open"
+                },                                
+                {
+                    "field": "status",
+                    "operator": "value_previous",
+                    "value": "hold"
+                }                                
             ],
-            "any": [],
             "actions": [
                 {
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.pending') %>"
+                        "<%= all('ticket.pending', { status : 'pending'}) %>"
                     ]
                 }
             ]
@@ -675,12 +685,12 @@
             ]
         },
         "notify_as_on_ticket_reopened": {
-            "title": "Notify Activity Stream on ticket reopened",
+            "title": "Notify Activity Stream on ticket reopened, part 1",
             "all": [
                 {
                     "field": "status",
-                    "operator": "less_than",
-                    "value": "solved"
+                    "operator": "value",
+                    "value": "new"
                 }
             ],
             "any": [
@@ -700,7 +710,131 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.reopened') %>"
+                        "<%= all('ticket.reopened', {status : 'new'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_reopened_1": {
+            "title": "Notify Activity Stream on ticket reopened, part 2",
+            "all": [
+                {
+                    "field": "status",
+                    "operator": "value",
+                    "value": "open"
+                }
+            ],
+            "any": [
+                {
+                    "field": "status",
+                    "operator": "value_previous",
+                    "value": "solved"
+                },
+                {
+                    "field": "status",
+                    "operator": "value_previous",
+                    "value": "closed"
+                }
+            ],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.reopened', {status : 'open'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_reopened_2": {
+            "title": "Notify Activity Stream on ticket reopened, part 3",
+            "all": [
+                {
+                    "field": "status",
+                    "operator": "value",
+                    "value": "pending"
+                }
+            ],
+            "any": [
+                {
+                    "field": "status",
+                    "operator": "value_previous",
+                    "value": "solved"
+                },
+                {
+                    "field": "status",
+                    "operator": "value_previous",
+                    "value": "closed"
+                }
+            ],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.reopened', {status : 'pending'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_reopened_3": {
+            "title": "Notify Activity Stream on ticket reopened, part 4",
+            "all": [
+                {
+                    "field": "status",
+                    "operator": "value",
+                    "value": "hold"
+                }
+            ],
+            "any": [
+                {
+                    "field": "status",
+                    "operator": "value_previous",
+                    "value": "solved"
+                },
+                {
+                    "field": "status",
+                    "operator": "value_previous",
+                    "value": "closed"
+                }
+            ],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.reopened', {status : 'hold'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_reopened_4": {
+            "title": "Notify Activity Stream on ticket reopened, part 5",
+            "all": [
+                {
+                    "field": "status",
+                    "operator": "value",
+                    "value": "new"
+                }
+            ],
+            "any": [
+                {
+                    "field": "status",
+                    "operator": "value_previous",
+                    "value": "solved"
+                },
+                {
+                    "field": "status",
+                    "operator": "value_previous",
+                    "value": "closed"
+                }
+            ],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.reopened', {status : 'new'}) %>"
                     ]
                 }
             ]

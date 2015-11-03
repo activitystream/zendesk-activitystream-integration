@@ -5,7 +5,6 @@ var json = {
     "id": null,
     "type": null,
     "title": null,
-    "description": null,
     "position": null,
     "active": null,
     "required": null,
@@ -49,7 +48,7 @@ var json = {
     "via": null,
     "satisfaction_score": "{{satisfaction.current_rating}}",
     "satisfaction_comment": "{{satisfaction.current_comment}}",
-    "_v" : "1.2.4"
+    "_v" : "1.2.7"
 };
 
 var jsonifier = function(sample, change) {
@@ -74,7 +73,11 @@ process.stdin.on('data', function (chunk) {
 });
 
 process.stdin.on('end', function () {
-    var allWithComments = function (change) {return jsonifier(json, change)};
+    var allWithComments = function (change, props) {
+        var all = JSON.parse(JSON.stringify(json));
+        if (props) all = _.assign(all, props);
+        return jsonifier(all, change)
+    };
     var all = function (change, props) {
         var all = JSON.parse(JSON.stringify(json));
         delete all.comments;
