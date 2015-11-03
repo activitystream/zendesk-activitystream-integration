@@ -807,37 +807,6 @@
                     ]
                 }
             ]
-        },
-        "notify_as_on_ticket_reopened_4": {
-            "title": "Notify Activity Stream on ticket reopened, part 5",
-            "all": [
-                {
-                    "field": "status",
-                    "operator": "value",
-                    "value": "new"
-                }
-            ],
-            "any": [
-                {
-                    "field": "status",
-                    "operator": "value_previous",
-                    "value": "solved"
-                },
-                {
-                    "field": "status",
-                    "operator": "value_previous",
-                    "value": "closed"
-                }
-            ],
-            "actions": [
-                {
-                    "field": "notification_target",
-                    "value": [
-                        "activitystream",
-                        "<%= all('ticket.reopened', {status : 'new'}) %>"
-                    ]
-                }
-            ]
         }
     }
 }
