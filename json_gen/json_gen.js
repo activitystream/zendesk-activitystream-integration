@@ -48,7 +48,7 @@ var json = {
     "via": null,
     "satisfaction_score": "{{satisfaction.current_rating}}",
     "satisfaction_comment": "{{satisfaction.current_comment}}",
-    "_v" : "1.2.7"
+    "_v" : "1.2.8"
 };
 
 var jsonifier = function(sample, change) {
