@@ -138,11 +138,6 @@
                     "field": "status",
                     "operator": "value_previous",
                     "value": "open"
-                },                                
-                {
-                    "field": "status",
-                    "operator": "value_previous",
-                    "value": "hold"
                 }                                
             ],
             "actions": [
@@ -684,7 +679,7 @@
                 }
             ]
         },
-        "notify_as_on_ticket_reopened": {
+        "notify_as_on_ticket_reopened_1": {
             "title": "Notify Activity Stream on ticket reopened, part 1",
             "all": [
                 {
@@ -715,7 +710,7 @@
                 }
             ]
         },
-        "notify_as_on_ticket_reopened_1": {
+        "notify_as_on_ticket_reopened_2": {
             "title": "Notify Activity Stream on ticket reopened, part 2",
             "all": [
                 {
@@ -746,7 +741,7 @@
                 }
             ]
         },
-        "notify_as_on_ticket_reopened_2": {
+        "notify_as_on_ticket_reopened_3": {
             "title": "Notify Activity Stream on ticket reopened, part 3",
             "all": [
                 {
@@ -773,37 +768,6 @@
                     "value": [
                         "activitystream",
                         "<%= all('ticket.reopened', {status : 'pending'}) %>"
-                    ]
-                }
-            ]
-        },
-        "notify_as_on_ticket_reopened_3": {
-            "title": "Notify Activity Stream on ticket reopened, part 4",
-            "all": [
-                {
-                    "field": "status",
-                    "operator": "value",
-                    "value": "hold"
-                }
-            ],
-            "any": [
-                {
-                    "field": "status",
-                    "operator": "value_previous",
-                    "value": "solved"
-                },
-                {
-                    "field": "status",
-                    "operator": "value_previous",
-                    "value": "closed"
-                }
-            ],
-            "actions": [
-                {
-                    "field": "notification_target",
-                    "value": [
-                        "activitystream",
-                        "<%= all('ticket.reopened', {status : 'hold'}) %>"
                     ]
                 }
             ]

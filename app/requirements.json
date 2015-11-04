@@ -138,11 +138,6 @@
                     "field": "status",
                     "operator": "value_previous",
                     "value": "open"
-                },                                
-                {
-                    "field": "status",
-                    "operator": "value_previous",
-                    "value": "hold"
                 }                                
             ],
             "actions": [
@@ -684,7 +679,7 @@
                 }
             ]
         },
-        "notify_as_on_ticket_reopened": {
+        "notify_as_on_ticket_reopened_1": {
             "title": "Notify Activity Stream on ticket reopened, part 1",
             "all": [
                 {
@@ -715,7 +710,7 @@
                 }
             ]
         },
-        "notify_as_on_ticket_reopened_1": {
+        "notify_as_on_ticket_reopened_2": {
             "title": "Notify Activity Stream on ticket reopened, part 2",
             "all": [
                 {
@@ -746,7 +741,7 @@
                 }
             ]
         },
-        "notify_as_on_ticket_reopened_2": {
+        "notify_as_on_ticket_reopened_3": {
             "title": "Notify Activity Stream on ticket reopened, part 3",
             "all": [
                 {
@@ -773,37 +768,6 @@
                     "value": [
                         "activitystream",
                         "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"pending\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.7\",\"_as_event\" : \"ticket.reopened\"}"
-                    ]
-                }
-            ]
-        },
-        "notify_as_on_ticket_reopened_3": {
-            "title": "Notify Activity Stream on ticket reopened, part 4",
-            "all": [
-                {
-                    "field": "status",
-                    "operator": "value",
-                    "value": "hold"
-                }
-            ],
-            "any": [
-                {
-                    "field": "status",
-                    "operator": "value_previous",
-                    "value": "solved"
-                },
-                {
-                    "field": "status",
-                    "operator": "value_previous",
-                    "value": "closed"
-                }
-            ],
-            "actions": [
-                {
-                    "field": "notification_target",
-                    "value": [
-                        "activitystream",
-                        "{\"id\" : \"{{ticket.id}}\",\"type\" : \"{{ticket.type}}\",\"title\" : \"{{ticket.title}}\",\"position\" : \"{{ticket.position}}\",\"active\" : \"{{ticket.active}}\",\"required\" : \"{{ticket.required}}\",\"title_in_portal\" : \"{{ticket.title_in_portal}}\",\"requester_email\" : \"{{ticket.requester.email}}\",\"assignee_email\" : \"{{ticket.assignee.email}}\",\"submitter_email\" : \"{{ticket.submitter.email}}\",\"current_user\" : \"{{current_user.email}}\",\"custom_fields\" : \"{% for item in ticket.organization.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"ticket_custom_fields\" : \"{% for item in ticket.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"requester_custom_fields\" : \"{% for item in ticket.requester.custom_fields %}{{ item[0] }}:{{ item[1] }}{% endfor %}\",\"tags\" : \"{{ticket.tags}}\",\"account\" : \"{{ticket.account}}\",\"ccs\" : \"{% for cc in ticket.ccs %}{{cc.email}} {% endfor %}\",\"created_at_with_timestamp\" : \"{{ticket.created_at_with_timestamp}}\",\"due_date_with_timestamp\" : \"{{ticket.due_date_with_timestamp}}\",\"external_id\" : \"{{ticket.external_id}}\",\"group.name\" : \"{{ticket.group.name}}\",\"in_business_hours\" : \"{{ticket.in_business_hours}}\",\"organization.name\" : \"{{ticket.organization.name}}\",\"priority\" : \"{{ticket.priority}}\",\"score\" : \"{{ticket.score}}\",\"status\" : \"hold\",\"ticket_type\" : \"{{ticket.ticket_type}}\",\"updated_at_with_timestamp\" : \"{{ticket.updated_at_with_timestamp}}\",\"url_with_protocol\" : \"{{ticket.url_with_protocol}}\",\"via\" : \"{{ticket.via}}\",\"satisfaction_score\" : \"{{satisfaction.current_rating}}\",\"satisfaction_comment\" : \"{{satisfaction.current_comment}}\",\"_v\" : \"1.2.7\",\"_as_event\" : \"ticket.reopened\"}"
                     ]
                 }
             ]
