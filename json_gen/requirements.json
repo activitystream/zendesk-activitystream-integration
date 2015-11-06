@@ -11,24 +11,6 @@
         }
     },
     "triggers": {
-        "notify_as_on_ticket_rated": {
-            "title": "Notify Activity Stream on ticket satisfaction score Changed",
-            "all": [
-                {
-                    "field": "satisfaction_score",
-                    "operator": "changed"
-                }
-            ],
-            "actions": [
-                {
-                    "field": "notification_target",
-                    "value": [
-                        "activitystream",
-                        "<%= all('ticket.rated') %>"
-                    ]
-                }
-            ]
-        },
         "notify_as_on_ticket_comments_change": {
             "title": "Notify Activity Stream on ticket comments Changed",
             "all": [
@@ -771,6 +753,46 @@
                     ]
                 }
             ]
-        }
+        },
+        "notify_as_on_satisfaction_score_changed_3": {
+            "title": "Notify Activity Stream on satisfaction score changed, part 3",
+            "all": [
+                {
+                    "field": "satisfaction_score",
+                    "operator": "value",
+                    "value": "good"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.rated', {satisfaction_score : 'good'}) %>"
+                    ]
+                }
+            ]
+        },                
+        "notify_as_on_satisfaction_score_changed_4": {
+            "title": "Notify Activity Stream on satisfaction score changed, part 4",
+            "all": [
+                {
+                    "field": "satisfaction_score",
+                    "operator": "value",
+                    "value": "bad"
+                }
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.rated', {satisfaction_score : 'bad'}) %>"
+                    ]
+                }
+            ]
+        }                
     }
 }

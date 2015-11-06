@@ -46,9 +46,8 @@ var json = {
     "updated_at_with_timestamp": null,
     "url_with_protocol": null,
     "via": null,
-    "satisfaction_score": "{{satisfaction.current_rating}}",
     "satisfaction_comment": "{{satisfaction.current_comment}}",
-    "_v" : "1.2.8"
+    "_v" : "1.2.9"
 };
 
 var jsonifier = function(sample, change) {
