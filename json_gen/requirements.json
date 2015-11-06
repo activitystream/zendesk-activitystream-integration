@@ -108,26 +108,110 @@
                     "field": "status",
                     "operator": "value",
                     "value": "pending"
-                }                
-            ],
-            "any": [
+                },
                 {
                     "field": "status",
-                    "operator": "value_previous",
-                    "value": "new"
+                    "operator": "not_value_previous",
+                    "value": "solved"
                 },                                
                 {
                     "field": "status",
-                    "operator": "value_previous",
-                    "value": "open"
-                }                                
+                    "operator": "not_value_previous",
+                    "value": "closed"
+                }                                                                
             ],
+            "any": [],
             "actions": [
                 {
                     "field": "notification_target",
                     "value": [
                         "activitystream",
                         "<%= all('ticket.pending', { status : 'pending'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_open": {
+            "title": "Notify Activity Stream on ticket open",
+            "all": [
+                {
+                    "field": "status",
+                    "operator": "value",
+                    "value": "open"
+                },
+                {
+                    "field": "status",
+                    "operator": "not_value_previous",
+                    "value": "solved"
+                },                                
+                {
+                    "field": "status",
+                    "operator": "not_value_previous",
+                    "value": "closed"
+                }                                                                
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.open', { status : 'open'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_onhold": {
+            "title": "Notify Activity Stream on ticket onhold",
+            "all": [
+                {
+                    "field": "status",
+                    "operator": "changed",
+                    "value": null
+                },
+                {
+                    "field": "status",
+                    "operator": "not_value",
+                    "value": "new"
+                },
+                {
+                    "field": "status",
+                    "operator": "not_value",
+                    "value": "open"
+                },
+                {
+                    "field": "status",
+                    "operator": "not_value",
+                    "value": "pending"
+                },
+                {
+                    "field": "status",
+                    "operator": "not_value",
+                    "value": "solved"
+                },
+                {
+                    "field": "status",
+                    "operator": "not_value",
+                    "value": "closed"
+                },
+                {
+                    "field": "status",
+                    "operator": "not_value_previous",
+                    "value": "solved"
+                },                                
+                {
+                    "field": "status",
+                    "operator": "not_value_previous",
+                    "value": "closed"
+                }                                                                
+            ],
+            "any": [],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.hold', { status : 'hold'}) %>"
                     ]
                 }
             ]
@@ -750,6 +834,62 @@
                     "value": [
                         "activitystream",
                         "<%= all('ticket.reopened', {status : 'pending'}) %>"
+                    ]
+                }
+            ]
+        },
+        "notify_as_on_ticket_reopened_4": {
+            "title": "Notify Activity Stream on ticket reopened, part 4",
+            "all": [
+                {
+                    "field": "status",
+                    "operator": "changed",
+                    "value": null
+                },
+                {
+                    "field": "status",
+                    "operator": "not_value",
+                    "value": "new"
+                },
+                {
+                    "field": "status",
+                    "operator": "not_value",
+                    "value": "open"
+                },
+                {
+                    "field": "status",
+                    "operator": "not_value",
+                    "value": "pending"
+                },
+                {
+                    "field": "status",
+                    "operator": "not_value",
+                    "value": "solved"
+                },
+                {
+                    "field": "status",
+                    "operator": "not_value",
+                    "value": "closed"
+                }
+            ],
+            "any": [
+                {
+                    "field": "status",
+                    "operator": "value_previous",
+                    "value": "solved"
+                },
+                {
+                    "field": "status",
+                    "operator": "value_previous",
+                    "value": "closed"
+                }
+            ],
+            "actions": [
+                {
+                    "field": "notification_target",
+                    "value": [
+                        "activitystream",
+                        "<%= all('ticket.reopened', {status : 'hold'}) %>"
                     ]
                 }
             ]

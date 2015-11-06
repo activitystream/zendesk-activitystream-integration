@@ -47,7 +47,7 @@ var json = {
     "url_with_protocol": null,
     "via": null,
     "satisfaction_comment": "{{satisfaction.current_comment}}",
-    "_v" : "1.2.9"
+    "_v" : "1.3.1"
 };
 
 var jsonifier = function(sample, change) {
