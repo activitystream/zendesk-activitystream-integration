@@ -211,7 +211,7 @@
                     "field": "notification_target",
                     "value": [
                         "activitystream",
-                        "<%= all('ticket.hold', { status : 'hold'}) %>"
+                        "<%= all('ticket.onhold', { status : 'onhold'}) %>"
                     ]
                 }
             ]
